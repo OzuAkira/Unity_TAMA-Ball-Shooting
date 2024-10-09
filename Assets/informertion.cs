@@ -10,7 +10,7 @@ public class informertion : MonoBehaviour
     void Start()
     {
         _Text.text = "000000000";
-        Debug.Log("コミット出来たかい？");
+        //Debug.Log("コミット出来たかい？");
     }
 
     // Update is called once per frame
