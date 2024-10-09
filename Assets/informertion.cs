@@ -9,7 +9,8 @@ public class informertion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    _Text.text = "000000000";    
+        _Text.text = "000000000";
+        Debug.Log("コミット出来たかい？");
     }
 
     // Update is called once per frame
