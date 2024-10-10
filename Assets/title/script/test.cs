@@ -3,28 +3,11 @@ using UnityEngine.InputSystem;
 
 public class test : MonoBehaviour
 {
-    [SerializeField] private InputActionReference _actionRef;
 
-    private void Awake()
+    private void Start()
     {
-        gameObject.SetActive(false);
-        if (_actionRef == null) return;
-
-        _actionRef.action.performed += OnJump;
-
-        _actionRef.action.Enable();
+        Debug.Log("Screen Width : " + Screen.width);
+        Debug.Log("Screen  height: " + Screen.height);
     }
 
-    private void OnDestroy()
-    {
-        if (_actionRef == null) return;
-
-        _actionRef.action.performed -= OnJump;
-        _actionRef.action.Dispose();
-    }
-
-    private void OnJump(InputAction.CallbackContext obj)
-    {
-        print("Jump");
-    }
 }
