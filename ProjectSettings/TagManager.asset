@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - bulia
   - Power
+  - _gameOver
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: New Layer 2
     uniqueID: 3099647423
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 259948989
     locked: 0

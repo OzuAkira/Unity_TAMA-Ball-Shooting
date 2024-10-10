@@ -58,7 +58,7 @@ public class playerMove : MonoBehaviour
          if (other.gameObject.CompareTag("Enemy_bullet") || other.gameObject.CompareTag("Enemy")){
             script = resPos.GetComponent<resurrection>();
             //            Debug.Log("bullet");
-            if (zan >= 0)
+            if (zan >= -1)
             {
                 if (script.bulia.activeSelf == false && !script.dieFlag)
                 {
