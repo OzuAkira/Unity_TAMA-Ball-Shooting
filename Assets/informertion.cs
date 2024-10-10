@@ -6,16 +6,33 @@ using UnityEngine;
 public class informertion : MonoBehaviour
 {
     public TMP_Text _Text;
+    public GameObject _mask;
+    private EnemyBasic _HP;
+    public int scoa;
     // Start is called before the first frame update
+    /*private void OnTriggerStay2D(Collider2D other) 
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            _HP = other.GetComponent<EnemyBasic>();
+            if(beforHP < _HP.Enemy_HP)
+            {
+                
+            }
+            beforHP = _HP.Enemy_HP;
+        }
+
+    }*/
     void Start()
     {
-        _Text.text = "000000000";
-        //Debug.Log("ƒRƒ~ƒbƒgo—ˆ‚½‚©‚¢H");
+        
+        //Debug.Log("ï¿½Rï¿½~ï¿½bï¿½gï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½H");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        string str = scoa.ToString();
+        _Text.text = str;
     }
 }

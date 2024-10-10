@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Bom : MonoBehaviour
 {
     public int nokoriBOM = 2;
+    public TMP_Text _Text;
     private resurrection _resurrection;
     //public GameObject[] E_buret;
     public GameObject _BObj;
+    
     void Start()
     {
         GameObject Res = GameObject.Find("Player_Resurrection");
@@ -20,21 +23,26 @@ public class Bom : MonoBehaviour
         {
             nokoriBOM--;
             StartCoroutine(C_FireB());
-            Debug.Log("Fire!!");
+            //Debug.Log("Fire!!");
         }
     }
     IEnumerator C_FireB()
     {
         _resurrection.bulia.SetActive(true);
         _BObj.SetActive(true);
-        M_FireB();
+        
         yield return new WaitForSeconds(4f);
         _resurrection.bulia.SetActive(false);
         _BObj.SetActive(false);
     }
-    void M_FireB()
+    void Update()
     {
-        
+        if(_resurrection.dieFlag)
+        {
+            nokoriBOM = 2;
+        }
+        string Bom = nokoriBOM.ToString();
+        _Text.text = "Bom "+Bom;
         /*for(int i=0;E_buret.Count() > i;i++)
         {
             GameObject _bullet = E_buret[i];

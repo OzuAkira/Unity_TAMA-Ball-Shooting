@@ -271,6 +271,17 @@
                     "action": "Bom",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fdea602-85ef-45bd-b80d-e1c5284c135f",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Bom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
