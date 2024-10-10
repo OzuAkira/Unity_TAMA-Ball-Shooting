@@ -39,7 +39,7 @@ public class ButtonHold : MonoBehaviour
         // ボタンが押されている場合、時間をカウント
         if (isHolding > 0)
         {
-            Debug.Log("Button held long enough!");
+            //Debug.Log("Button held long enough!");
                 // 長押し処理をここで実行
                 
                 // 一度長押しが認識されたらリセット

@@ -30,8 +30,9 @@ public class Bom : MonoBehaviour
     {
         _resurrection.bulia.SetActive(true);
         _BObj.SetActive(true);
-        
+        ///Debug.Log("カウント前");
         yield return new WaitForSeconds(4f);
+        ///Debug.Log("4秒後");
         _resurrection.bulia.SetActive(false);
         _BObj.SetActive(false);
     }

@@ -6,8 +6,10 @@ using UnityEngine;
 public class informertion : MonoBehaviour
 {
     public TMP_Text _Text;
+    public TMP_Text _Text2;
     public GameObject _mask;
     private EnemyBasic _HP;
+    public playerMove playerMove;
     public int scoa;
     // Start is called before the first frame update
     /*private void OnTriggerStay2D(Collider2D other) 
@@ -34,5 +36,11 @@ public class informertion : MonoBehaviour
     {
         string str = scoa.ToString();
         _Text.text = str;
+
+        string x = playerMove.zan.ToString();
+        if(playerMove.zan > 0)
+        _Text2.text = "Player "+x;
+
+        else _Text2.text="Player 0";
     }
 }

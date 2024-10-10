@@ -12,6 +12,7 @@ public class playerMove : MonoBehaviour
     GameObject resPos;
     float move_speed = 3.7f;
     TeisokuHold teisokuHold;
+    public int zan = 2;
     /*
 
     string shot;
@@ -22,12 +23,14 @@ public class playerMove : MonoBehaviour
     public GameObject teisokuObj;
 
      */
+    resurrection script;
     void Start()
     {
         resPos = GameObject.Find("Player_Resurrection");
         teisokuHold = gameObject.GetComponent<TeisokuHold>();
-    //   shotObj = S_mask.GetComponent<inputaction>();
-    //  shot = shotObj._action;
+        script = resPos.GetComponent<resurrection>();
+        //   shotObj = S_mask.GetComponent<inputaction>();
+        //  shot = shotObj._action;
     }
 
     void OnMove(InputValue value)
@@ -53,11 +56,18 @@ public class playerMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         //Debug.Log("coll");        
          if (other.gameObject.CompareTag("Enemy_bullet") || other.gameObject.CompareTag("Enemy")){
-//            Debug.Log("bullet");
-            resurrection script = resPos.GetComponent<resurrection>();
-            if(script.dieFlag == false){
-                gameObject.SetActive(false);
+            script = resPos.GetComponent<resurrection>();
+            //            Debug.Log("bullet");
+            if (zan >= 0)
+            {
+                if (script.bulia.activeSelf == false && !script.dieFlag)
+                {
+                    gameObject.SetActive(false);
+                    zan--;
+                }
             }
+            //else Debug.Log("gameover");
+
         }
     }
 
@@ -72,6 +82,7 @@ public class playerMove : MonoBehaviour
         {
             move_speed = 4f;
         }
+        ///Debug.Log(script.dieFlag);
        /*
 
         if ()
