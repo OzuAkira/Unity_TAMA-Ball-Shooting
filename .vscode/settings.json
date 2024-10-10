@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "gst_local.sln"
+    "dotnet.defaultSolution": "gst_local-main.sln"
 }
