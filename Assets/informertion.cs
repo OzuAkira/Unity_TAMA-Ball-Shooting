@@ -11,6 +11,7 @@ public class informertion : MonoBehaviour
     private EnemyBasic _HP;
     public playerMove playerMove;
     public int scoa;
+    public string str;
     // Start is called before the first frame update
     /*private void OnTriggerStay2D(Collider2D other) 
     {
@@ -34,13 +35,11 @@ public class informertion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string str = scoa.ToString();
+        str = scoa.ToString();
         _Text.text = str;
 
         string x = playerMove.zan.ToString();
-        if(playerMove.zan > 0)
-        _Text2.text = "Player "+x;
-
+        if(playerMove.zan > 0)_Text2.text = "Player "+x;
         else _Text2.text="Player 0";
     }
 }

@@ -11,18 +11,23 @@ public class resurrection : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject bulia;
+    public GameObject Wall;
     public GameObject _gameOver;
     public GameObject _backG;
     SpriteRenderer sr;
     SpriteRenderer sr2;
+    informertion _in;
     public TMP_Text _Text1;
-    public TMP_Text _Text2;
+    //public RectTransform _RectTransform;
+    //public TMP_Text _Text2;
     private float time = 0.0f;
     //private CircleCollider2D Cir_col;
     public bool dieFlag = false;
     private Vector2 res_position;
     public playerMove Z;
     float x = 0;
+    float y = 0;
+    private bool f;
     private void Awake()
     {
         _gameOver.SetActive(false);
@@ -43,7 +48,7 @@ public class resurrection : MonoBehaviour
          if (player.activeSelf == false )
          {
             Z = player.GetComponent<playerMove>();
-            if (Z.zan >= -1)
+            if (Z.zan >= 0)
             {
                 time += Time.deltaTime;
                 player.transform.position = res_position;
@@ -60,22 +65,30 @@ public class resurrection : MonoBehaviour
             else
             {
             
-                sr = _gameOver.GetComponent<SpriteRenderer>();
-                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,0);
+                
 
-                sr2 = _backG.GetComponent<SpriteRenderer>();
-                sr2.color = new Color(sr.color.r, sr.color.g, sr.color.b,0);
-
-                //_Text1.color = new Color(_Text1.color.r,_Text1.color.g,_Text1.color.b,0);
+                
                 //_Text2.color = new Color(_Text2.color.r,_Text2.color.g,_Text2.color.b,0);
-                StartCoroutine(otukare());
-                Debug.Log("gameover");
+                if (f == false)
+                {
+                    sr = _gameOver.GetComponent<SpriteRenderer>();
+                    sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,0);
+
+                    sr2 = _backG.GetComponent<SpriteRenderer>();
+                    sr2.color = new Color(0,0,0,0);
+
+                    _Text1.color = new Color(_Text1.color.r,_Text1.color.g,_Text1.color.b,0);
+                    StartCoroutine(otukare());
+                    f = true;
+                }
+                //
             }
         }
         if(dieFlag == true)
         {
             time += Time.deltaTime;
-            if (time > 4){
+            if (time > 4)
+            {
                     //Cir_col.enabled = true;
                     bulia.SetActive(false);
                     time = 0;
@@ -86,28 +99,33 @@ public class resurrection : MonoBehaviour
     IEnumerator otukare()
     {
         //int i = 0;
-        yield return new WaitForSeconds(2);
+        Debug.Log("gameover");
+        yield return new WaitForSeconds(4);
         _gameOver.SetActive(true);
         _backG.SetActive(true);
-        
-        
+        _Text1.rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+
         while (x < 100)
         {
-            x += 0.0005f;
+            x += 0.005f;
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,x);
-            sr2.color = new Color(sr2.color.r,sr2.color.g,sr2.color.b,x);
+            sr2.color = new Color(0, 0, 0, x);
             yield return null;
-            Debug.Log(x);
+            //Debug.Log(x);
         }
-        while(x >= 100)
+        //x = 0;
+       /* while(x >= 100)
         {
-            Debug.Log(x);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,x);
-            sr2.color = new Color(sr2.color.r,sr2.color.g,sr2.color.b,x);
-            /*if(Input.anyKeyDown)
+            y += 0.005f;
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,100);
+            sr2.color = new Color(0, 0, 0,100);
+           /* _Text1.color = new Color(250,250,250,y);
+            if(y >= 100)
             {
-                StartCoroutine(ranking());
-            }*/
+                _in = Wall.GetComponent<informertion>();
+                _Text1.text = "Your Score "+_in.str;
+            }
+           */
             yield return null;
         }
     }
@@ -124,4 +142,4 @@ public class resurrection : MonoBehaviour
         }
     }
     */
-}
+

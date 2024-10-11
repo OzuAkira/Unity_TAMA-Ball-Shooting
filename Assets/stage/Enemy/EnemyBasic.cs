@@ -6,7 +6,7 @@ public class EnemyBasic : MonoBehaviour
 {
     public int Enemy_HP = 1;
     public bool die = false;
-    public informertion _informertion;
+    informertion _informertion;
     private GameObject _gameObject;
     // Start is called before the first frame update
     void Start()
