@@ -36,5 +36,9 @@ public class Over : MonoBehaviour
             i++;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        other.gameObject.SetActive(false);
+    }
 
 }
