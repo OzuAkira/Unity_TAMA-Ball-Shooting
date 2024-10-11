@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,8 @@ public class resurrection : MonoBehaviour
     public GameObject bulia;
     public GameObject _gameOver;
     SpriteRenderer sr;
+    public TMP_Text _Text1;
+    public TMP_Text _Text2;
     private float time = 0.0f;
     //private CircleCollider2D Cir_col;
     public bool dieFlag = false;
@@ -82,6 +85,12 @@ public class resurrection : MonoBehaviour
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,x);
             yield return null;
             Debug.Log(x);
+        }
+        while(x >= 100)
+        {
+            Debug.Log(x);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,x);
+            yield return null;
         }
     }
     IEnumerator ranking()
