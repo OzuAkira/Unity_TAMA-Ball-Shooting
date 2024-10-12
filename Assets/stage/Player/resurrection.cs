@@ -26,7 +26,7 @@ public class resurrection : MonoBehaviour
     private Vector2 res_position;
     public playerMove Z;
     float x = 0;
-    float y = 0;
+    //float y = 0;
     private bool f;
     private void Awake()
     {

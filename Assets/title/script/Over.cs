@@ -82,15 +82,30 @@ public class Over : MonoBehaviour
                 //Debug.Log(_Text2);
             }
         yield return new WaitForSeconds(1);
-        if (Input.anyKeyDown)
+        while (i != -100)
         {
-           SceneManager.LoadSceneAsync("title");
+            if (Input.anyKeyDown)
+            {
+                StartCoroutine(LoadSeen());
+            }
+            else
+            {
+                yield return null;
+                Debug.Log("delay");
+            }
         }
-        else
+
+    }
+    IEnumerator LoadSeen()
+    {
+        StopCoroutine(waitOne());
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("stage1");
+
+        // ロードがまだなら次のフレームへ
+        while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
