@@ -86,27 +86,29 @@ public class Over : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                StartCoroutine(LoadSeen());
+                //StartCoroutine(LoadSeen());
+                AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("title");
+                while (!asyncLoad.isDone)
+                {
+                    yield return null;
+                }
             }
             else
             {
                 yield return null;
-                Debug.Log("delay");
+                //Debug.Log("delay");
             }
         }
 
     }
-    IEnumerator LoadSeen()
+    /*IEnumerator LoadSeen()
     {
-        StopCoroutine(waitOne());
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("stage1");
+        //StopCoroutine(waitOne());
+        
 
         // ロードがまだなら次のフレームへ
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-    }
+       
+    }*/
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("_gameOver"))
