@@ -298,9 +298,12 @@ MonoBehaviour:
   _Text: {fileID: 2011281641}
   _Text2: {fileID: 1380186199}
   _mask: {fileID: 1593492552}
+  play: {fileID: 1481997478}
   playerMove: {fileID: 1481997484}
   scoa: 0
   str: 
+  _nokoriB: 0
+  _zan: 0
 --- !u!1 &85589965
 GameObject:
   m_ObjectHideFlags: 0

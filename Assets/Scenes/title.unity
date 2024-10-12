@@ -506,6 +506,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 957403536902397110, guid: 3398074293ec5a045bb6b26c8c2cecf6, type: 3}
+      propertyPath: _input
+      value: 
+      objectReference: {fileID: -5950530158127649449, guid: 873b3c135e0443d4386ecbb60347bdc0, type: 3}
+    - target: {fileID: 957403536902397110, guid: 3398074293ec5a045bb6b26c8c2cecf6, type: 3}
       propertyPath: MenuTable.Array.size
       value: 2
       objectReference: {fileID: 0}

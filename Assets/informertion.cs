@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class informertion : MonoBehaviour
 {
-    public TMP_Text _Text;
-    public TMP_Text _Text2;
-    public GameObject _mask;
+    [SerializeField] private TMP_Text _Text;
+    [SerializeField] private TMP_Text _Text2;
+    [SerializeField] private GameObject _mask;
+    [SerializeField] private GameObject play;
     private EnemyBasic _HP;
-    public playerMove playerMove;
+    [SerializeField] private playerMove playerMove;
+
     public int scoa;
     public string str;
+    Bom _bom;
+    public int _nokoriB;
+    public int _zan;
     // Start is called before the first frame update
     /*private void OnTriggerStay2D(Collider2D other) 
     {
@@ -35,10 +40,15 @@ public class informertion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _bom = play.GetComponent<Bom>();
+        _nokoriB = _bom.nokoriBOM;
+
+
         str = scoa.ToString();
         _Text.text = str;
+        _zan = playerMove.zan;
 
-        string x = playerMove.zan.ToString();
+        string x =_zan.ToString();
         if(playerMove.zan > 0)_Text2.text = "Player "+x;
         else _Text2.text="Player 0";
     }

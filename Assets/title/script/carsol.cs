@@ -24,6 +24,7 @@ public abstract class carsol : MonoBehaviour
     {
         // 画像を切り替える
         spriteRenderer.sprite = OnSprite;
+        if(spriteRenderer != null )return;
         //Debug.Log("teisoku=");
     }
     // カーソルが合っていないとき

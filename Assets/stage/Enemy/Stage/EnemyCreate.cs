@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class EnemyCreate : MonoBehaviour
 {
@@ -47,6 +49,8 @@ public class EnemyCreate : MonoBehaviour
     private bool flag13 = false;
     public GameObject BomEnemy;
     private bool flag14 = false;
+    private bool flag15 = false;
+    //public GameObject 
 
     // Start is called before the first frame update
     void Start()
@@ -139,8 +143,25 @@ public class EnemyCreate : MonoBehaviour
             Instantiate(StageBoss,new Vector3(0,6.3f,0),Quaternion.identity);
             flag13 = true;
         }
+        if(StageBoss.activeSelf == false && flag15 == false)
+            {
+                flag15 = true;
+                StartCoroutine(kuria());
+            }
         }
         
+    }
+    IEnumerator kuria()
+    {
+        yield return new WaitForSeconds(5);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Crea");
+
+        // ロードがまだなら次のフレームへ
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
     }
     async void delay_right()
     {
@@ -190,4 +211,8 @@ public class EnemyCreate : MonoBehaviour
                 await Task.Delay(500); 
             }
     }
+
+
+
+
 }

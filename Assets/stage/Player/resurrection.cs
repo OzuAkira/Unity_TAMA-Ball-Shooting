@@ -130,6 +130,7 @@ public class resurrection : MonoBehaviour
         }
     }
     
+
     /*
     IEnumerator ranking()
     {

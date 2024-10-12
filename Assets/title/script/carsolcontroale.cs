@@ -10,13 +10,17 @@ public class carsolcontroale : MonoBehaviour
     int Cursor = 0;
     public carsol[] MenuTable;
     public SpriteRenderer CursorRenderer;
+   // public InputActionReference _input;
+    //private InputAction _action;
     
     private bool i = false;
     private bool ii = false;
+    //private bool jj = false;
     
     // Start is called before the first frame update
     void Start()
     {
+      //  _action = _input.action;
         UpdateMenu();
         
     }
@@ -36,13 +40,15 @@ public class carsolcontroale : MonoBehaviour
             //await Task.Delay(500);
         }
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         //Debug.Log();
         int oldCursor = Cursor;
         int cursorMax = MenuTable.Length;
+
+        //jj = false; 
 
         if (i )
         {
@@ -73,11 +79,12 @@ public class carsolcontroale : MonoBehaviour
             i = true;
             ii = true;
         }*/
-        else if(Input.GetKeyDown(KeyCode.Space))
+        else if(Input.GetKeyDown(KeyCode.Z) )
         {
             MenuTable[Cursor].Select();
+            //Debug.Log(Input.GetButtonDown("a"));
         }
-
+        
         // カーソルの制御
         if(Cursor < 0)
         {
