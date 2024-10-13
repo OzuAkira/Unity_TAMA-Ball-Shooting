@@ -24,7 +24,7 @@ public class carsolcontroale : MonoBehaviour
         UpdateMenu();
         
     }
-    void OnNavigate(InputValue value)
+    void OnMove(InputValue value)
     {
         
         var axis = value.Get<Vector2>();
@@ -40,6 +40,7 @@ public class carsolcontroale : MonoBehaviour
             //await Task.Delay(500);
         }
     }
+
     
     // Update is called once per frame
     void Update()
@@ -85,6 +86,7 @@ public class carsolcontroale : MonoBehaviour
             //Debug.Log(Input.GetButtonDown("a"));
         }
         
+        
         // カーソルの制御
         if(Cursor < 0)
         {
@@ -100,6 +102,10 @@ public class carsolcontroale : MonoBehaviour
         {
             UpdateMenu();
         }
+    }
+    void OnShot()
+    {
+        MenuTable[Cursor].Select();
     }
 
     // メニューの更新

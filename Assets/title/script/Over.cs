@@ -37,7 +37,7 @@ public class Over : MonoBehaviour
     {
         if (Input.anyKeyDown && flag1 == false)
         {
-            Debug.Log("push");
+            //Debug.Log("push");
             flag1 = true;
             StartCoroutine(waitOne());
         }
@@ -62,7 +62,7 @@ public class Over : MonoBehaviour
         float ii = 0;
         while (ii <= 1) 
         {
-            //Debug.Log("ii="+ii);
+            Debug.Log("ii="+ii);
             _Text1.color = new Color(255,255,255,ii);
             yield return null;
             ii+= 0.005f;

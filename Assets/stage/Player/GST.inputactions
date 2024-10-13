@@ -186,6 +186,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f634a1c6-ac8d-4336-bd7f-83ca64a459b3",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
@@ -380,7 +391,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shot",
+                    "name": "kettei",
                     "type": "Button",
                     "id": "40107082-76f6-4919-ae8b-ecb71ca0697f",
                     "expectedControlType": "Button",
@@ -780,7 +791,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Shot",
+                    "action": "kettei",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -791,7 +802,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Shot",
+                    "action": "kettei",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

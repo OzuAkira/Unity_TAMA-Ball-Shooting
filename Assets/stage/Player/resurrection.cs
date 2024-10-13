@@ -78,8 +78,9 @@ public class resurrection : MonoBehaviour
                     sr2.color = new Color(0,0,0,0);
 
                     _Text1.color = new Color(_Text1.color.r,_Text1.color.g,_Text1.color.b,0);
-                    StartCoroutine(otukare());
                     f = true;
+                    StartCoroutine(otukare());
+                   
                 }
                 //
             }

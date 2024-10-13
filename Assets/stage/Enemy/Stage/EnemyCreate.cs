@@ -50,6 +50,7 @@ public class EnemyCreate : MonoBehaviour
     public GameObject BomEnemy;
     private bool flag14 = false;
     private bool flag15 = false;
+    private GameObject b;
     //public GameObject 
 
     // Start is called before the first frame update
@@ -137,23 +138,30 @@ public class EnemyCreate : MonoBehaviour
         {
             flag14 = true;
             Instantiate(BomEnemy,serd_3,Quaternion.identity);
+               
         }
         if(flag12 && timeCount >= 23 && flag13 == false)
         {
-            Instantiate(StageBoss,new Vector3(0,6.3f,0),Quaternion.identity);
-            flag13 = true;
+           b = Instantiate(StageBoss,new Vector3(0,6.3f,0),Quaternion.identity);
+                
+                flag13 = true;
         }
-        if(StageBoss.activeSelf == false && flag15 == false)
+          /*  if (flag13)
+            {
+                BL = StageBoss.GetComponent<BossLief>();
+            }*/
+        if(b.activeSelf == false && flag15 == false)
             {
                 flag15 = true;
                 StartCoroutine(kuria());
             }
         }
+        Debug.Log(b.activeSelf);
         
     }
     IEnumerator kuria()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Crea");
 
         // ロードがまだなら次のフレームへ

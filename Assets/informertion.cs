@@ -52,4 +52,5 @@ public class informertion : MonoBehaviour
         if(playerMove.zan > 0)_Text2.text = "Player "+x;
         else _Text2.text="Player 0";
     }
+    //void
 }
