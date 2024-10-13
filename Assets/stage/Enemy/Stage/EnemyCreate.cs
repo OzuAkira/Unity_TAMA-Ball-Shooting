@@ -4,36 +4,39 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using TMPro.EditorUtilities;
+using TMPro;
+using System.Linq;
 
 public class EnemyCreate : MonoBehaviour
 {
     private float timeCount = 0;
 
-    public GameObject fEnemy; 
-    Vector2 first = new Vector2(-2.7f,4);
+    public GameObject fEnemy;
+    Vector2 first = new Vector2(-2.7f, 4);
     private bool flag1 = false;
 
     public GameObject sEnemy;
-    Vector2 second = new Vector2(2.7f,3);
+    Vector2 second = new Vector2(2.7f, 3);
     private bool flag2 = false;
 
     public GameObject srdEnemy;
-    Vector2 serd_1 = new Vector2(-1.5f,5);
-    Vector2 serd_2 = new Vector2(1.5f,5);
-    private bool flag3  = false;
+    Vector2 serd_1 = new Vector2(-1.5f, 5);
+    Vector2 serd_2 = new Vector2(1.5f, 5);
+    private bool flag3 = false;
 
     public GameObject srdEnemy_C;
-    Vector2 serd_3 = new Vector2(0,5);   
-    private bool flag4  = false; 
+    Vector2 serd_3 = new Vector2(0, 5);
+    private bool flag4 = false;
 
     public GameObject M_Boss;
-    private bool flag5 = false; 
+    private bool flag5 = false;
     //private int M_count = 0;
     private bool flag6 = false;
     private bool flag7 = false;
     private bool flag8 = false;
     //II_flag II;
-    Vector2 M = new Vector2(0,7.3f);
+    Vector2 M = new Vector2(0, 7.3f);
     flagOnly E_Flag = null;
     GameObject CreateEnemy;
     EnemyBasic D_flag;
@@ -51,12 +54,37 @@ public class EnemyCreate : MonoBehaviour
     private bool flag14 = false;
     private bool flag15 = false;
     private GameObject b;
+    public GameObject wall; informertion _informertion;
+    public GameObject mask; SpriteRenderer sr;
+    public TMP_Text[] _text;
+    private int newScoa;
+    private float x = 0;
     //public GameObject 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _informertion = wall.GetComponent<informertion>();
+        sr = mask.GetComponent<SpriteRenderer>();
+        sr.color = new Color(0,0,0,0);
+        mask.SetActive(false);
+       // Clear.SetActive(false);
+       
+
+        for (int i = 0; i < _text.Count(); i++)
+        {
+            _text[i].color = new Color(255, 255, 255, 0);
+        }
+        _text[0].text = "Clear!";
+        //_text[1].text = "Your Score " + _informertion.str;
+        _text[2].text = "Bom=500";
+        _text[3].text = "player=1000";
+
+       // newScoa = _informertion.scoa + _informertion._nokoriB * 500 + _informertion._zan * 1000;
+
+        //_text[1].text = newScoa.ToString();
+
+        _text[4].text = "Thank you for playng!";
     }
 
     // Update is called once per frame
@@ -68,109 +96,181 @@ public class EnemyCreate : MonoBehaviour
             flag1 = true;
             delay_right();
         }
-        if(timeCount > 7 && flag2 == false)
+        if (timeCount > 7 && flag2 == false)
         {
             flag2 = true;
             delay_left();
         }
-        if(timeCount > 10 && flag3 == false)
+        if (timeCount > 10 && flag3 == false)
         {
             flag3 = true;
-            flag6 = Instantiate(srdEnemy,serd_1,Quaternion.identity);
+            flag6 = Instantiate(srdEnemy, serd_1, Quaternion.identity);
             //II = CreateEnemy.GetComponent<II_flag>();
             //flag6 = II.flaG;
-            Instantiate(srdEnemy,serd_2,Quaternion.identity);
+            Instantiate(srdEnemy, serd_2, Quaternion.identity);
             //II = CreateEnemy.GetComponent<II_flag>();
             //flag7 = II.flaG;
             timeCount = 0;
         }
-        if(timeCount > 10 && flag6 == true && flag4 == false)
+        if (timeCount > 10 && flag6 == true && flag4 == false)
         {
             flag4 = true;
-            CreateEnemy = Instantiate(srdEnemy_C,serd_3,Quaternion.identity);
+            CreateEnemy = Instantiate(srdEnemy_C, serd_3, Quaternion.identity);
             E_Flag = CreateEnemy.GetComponent<flagOnly>();
             flag8 = true;
         }
-        if(flag8){
-            if(E_Flag.threeEnemys && flag5 == false)
+        if (flag8) {
+            if (E_Flag.threeEnemys && flag5 == false)
             {
                 flag5 = true;
-                CreateEnemy = Instantiate(M_Boss,M,Quaternion.identity);
+                CreateEnemy = Instantiate(M_Boss, M, Quaternion.identity);
                 D_flag = CreateEnemy.GetComponent<EnemyBasic>();
             }
         }
         //flagOnly M = srdEnemy_C.GetComponent<flagOnly>();
         //Debug.Log("Create" + M.threeEnemys);
-        if(flag5){
-        if(D_flag.die)
+        if (flag5)
         {
-            if(flag7 == false)
+            if (D_flag.die)
             {
-                flag7 = true;
-                timeCount = 0;
-            }
-            if(timeCount > 2 && flag7)
-            {
-                if (flag9 == false)
+                if (flag7 == false)
+                {
+                    flag7 = true;
+                    timeCount = 0;
+                }
+                if (timeCount > 2 && flag7)
+                {
+                    if (flag9 == false)
                     {
                         flag9 = true;
                         delay_right2();
                     }
-                if (timeCount > 1.5f && flag10 == false)
+                    if (timeCount > 1.5f && flag10 == false)
                     {
                         flag10 = true;
                         delay_left2();
                     }
-                if (timeCount > 3 && flag11 == false)
+                    if (timeCount > 3 && flag11 == false)
                     {
                         flag11 = true;
                         delay_down();
                     }
-                if (timeCount > 3 && flag12 == false)
+                    if (timeCount > 3 && flag12 == false)
                     {
                         flag12 = true;
                         delay_up();
                         timeCount = 0;
                     }
+                }
             }
-        }
-        if(timeCount >= 15 && flag12 && flag14 == false)
-        {
-            flag14 = true;
-            Instantiate(BomEnemy,serd_3,Quaternion.identity);
-               
-        }
-        if(flag12 && timeCount >= 23 && flag13 == false)
-        {
-           b = Instantiate(StageBoss,new Vector3(0,6.3f,0),Quaternion.identity);
-                
+            if (timeCount >= 15 && flag12 && flag14 == false)
+            {
+                flag14 = true;
+                Instantiate(BomEnemy, serd_3, Quaternion.identity);
+
+            }
+            if (flag12 && timeCount >= 23 && flag13 == false)
+            {
+                b = Instantiate(StageBoss, new Vector3(0, 6.3f, 0), Quaternion.identity);
+
                 flag13 = true;
-        }
-          /*  if (flag13)
+            }
+            /*  if (flag13)
+              {
+                  BL = StageBoss.GetComponent<BossLief>();
+              }*/
+            if (b != null)
             {
-                BL = StageBoss.GetComponent<BossLief>();
-            }*/
-        if(b.activeSelf == false && flag15 == false)
-            {
-                flag15 = true;
-                StartCoroutine(kuria());
+                if (b.activeSelf == false && flag15 == false)
+                {
+                    flag15 = true;
+                    mask.SetActive(true);
+                    _informertion = wall.GetComponent<informertion>();
+                    _text[1].text = "Your Score " + _informertion.str;
+                    newScoa = _informertion.scoa + _informertion._nokoriB * 500 + _informertion._zan * 1000;
+                    StartCoroutine(kuria());
+                }
             }
         }
-        Debug.Log(b.activeSelf);
-        
+        //Debug.Log(b.activeSelf);
+
     }
     IEnumerator kuria()
     {
-        yield return new WaitForSeconds(2);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Crea");
-
-        // ロードがまだなら次のフレームへ
-        while (!asyncLoad.isDone)
+        while (x < 1)
         {
+            x += 0.01f;
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, x);
+            yield return null;
+        }
+        x = 0;
+        while (x < 1)
+        {
+            _text[0].color = new Color(255, 255, 255, x);
+            yield return null;
+            x += 0.01f;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        while (x < 2)
+        {
+            x += 0.01f;
+            _text[1].color = new Color(255, 255, 255, x - 1);
             yield return null;
         }
 
+        yield return new WaitForSeconds(1);
+
+        while (x < 3)
+        {
+            x += 0.01f;
+            _text[2].color = new Color(255, 255, 255, x - 2);
+            _text[3].color = new Color(255, 255, 255, x - 2);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        while (x < 5)
+        {
+            x += 0.01f;
+            _text[1].text = "Your Score " + newScoa.ToString();
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        while (x < 7)
+        {
+            x += 0.01f;
+            _text[4].color = new Color(255, 255, 255, x - 6);
+            yield return null;
+        }
+        while (x < 8)
+        {
+            if (Input.anyKeyDown)
+            {
+                AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("title");
+                while (!asyncLoad.isDone)
+                {
+                    yield return null;
+                }
+            }
+            yield return null;
+        }
     }
+
+    /*yield return new WaitForSeconds(2);
+    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Crea");
+
+    // ロードがまだなら次のフレームへ
+    while (!asyncLoad.isDone)
+    {
+        yield return null;
+    }*/
+
+
     async void delay_right()
     {
         for(int i=0;i<5;i++)
