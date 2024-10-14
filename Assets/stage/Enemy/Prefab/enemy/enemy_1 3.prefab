@@ -106,7 +106,7 @@ MonoBehaviour:
   die: 0
   audios:
   - {fileID: 8300000, guid: 62611d36f086ca1448f6800aafe16585, type: 3}
-  - {fileID: 8300000, guid: 62611d36f086ca1448f6800aafe16585, type: 3}
+  - {fileID: 8300000, guid: 1ad237c82ed5c5443a0d6d64132f1974, type: 3}
 --- !u!58 &7857617990608434427
 CircleCollider2D:
   m_ObjectHideFlags: 0
