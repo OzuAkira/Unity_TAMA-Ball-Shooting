@@ -21,10 +21,12 @@ public class BossLief : MonoBehaviour
         {
             Enemy_HP--;
             _informertion.scoa++;
+            GetComponent<AudioSource>().Play();
             Destroy(players.gameObject);
             if (Enemy_HP <= 0)
             {
                 _informertion.scoa += 100;
+                GetComponent<AudioSource>().Play();
                gameObject.SetActive(false);
                 bdie = true;
             }

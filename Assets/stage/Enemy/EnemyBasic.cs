@@ -20,11 +20,13 @@ public class EnemyBasic : MonoBehaviour
         if(players.gameObject.CompareTag("Player_bullet"))
         {
             Enemy_HP--;
+            GetComponent<AudioSource>().Play();
             _informertion.scoa++;
             Destroy(players.gameObject);
             if(Enemy_HP <= 0)
             {
                 _informertion.scoa+=100;
+                GetComponent<AudioSource>().Play();
                 Destroy(gameObject,0.1f);
                 die = true;
             }
