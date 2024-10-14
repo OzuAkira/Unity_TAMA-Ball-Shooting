@@ -77,8 +77,8 @@ public class EnemyCreate : MonoBehaviour
         }
         _text[0].text = "Clear!";
         //_text[1].text = "Your Score " + _informertion.str;
-        _text[2].text = "Bom=500";
-        _text[3].text = "player=1000";
+        _text[2].text = "Bom=1000";
+        _text[3].text = "player=3000";
 
        // newScoa = _informertion.scoa + _informertion._nokoriB * 500 + _informertion._zan * 1000;
 
@@ -187,7 +187,7 @@ public class EnemyCreate : MonoBehaviour
                     mask.SetActive(true);
                     _informertion = wall.GetComponent<informertion>();
                     _text[1].text = "Your Score " + _informertion.str;
-                    newScoa = _informertion.scoa + _informertion._nokoriB * 500 + _informertion._zan * 1000;
+                    newScoa = _informertion.scoa + _informertion._nokoriB * 1000 + _informertion._zan * 3000;
                     StartCoroutine(kuria());
                 }
             }
@@ -264,7 +264,7 @@ public class EnemyCreate : MonoBehaviour
     /*yield return new WaitForSeconds(2);
     AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Crea");
 
-    // ƒ[ƒh‚ª‚Ü‚¾‚È‚çŸ‚ÌƒtƒŒ[ƒ€‚Ö
+    // ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½È‚çŸï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
     while (!asyncLoad.isDone)
     {
         yield return null;

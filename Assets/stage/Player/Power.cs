@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
+    public GameObject wall;
+    informertion _info;
     public int P = 0;
     // Start is called before the first frame update
     void Start()
@@ -15,8 +17,17 @@ public class Power : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Power"))
         {
-            P++;
+            if(P < 2)
+            {
+                P++;
+            }
+            else
+            {
+                _info = wall.GetComponent<informertion>();
+                _info.scoa += 500;
+            }
         }
+        
     }
     // Update is called once per frame
     void Update()
