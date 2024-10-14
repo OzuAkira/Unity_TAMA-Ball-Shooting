@@ -10,6 +10,8 @@ public class playerMove : MonoBehaviour
     Vector3 _velocity;
     //private float _onteisoku = 0;
     GameObject resPos;
+    public GameObject boss;
+    BossLief bossLief;
     float move_speed = 3.7f;
     TeisokuHold teisokuHold;
     public int zan = 2;
@@ -54,7 +56,16 @@ public class playerMove : MonoBehaviour
     }*/
 
     private void OnTriggerEnter2D(Collider2D other) {
-        //Debug.Log("coll");        
+        //Debug.Log("coll");
+        if (boss != null)
+        {
+            bossLief = boss.GetComponent<BossLief>();
+            if(bossLief.Enemy_HP <= 0)
+            {
+                return;
+            }
+                
+        }
          if (other.gameObject.CompareTag("Enemy_bullet") || other.gameObject.CompareTag("Enemy")){
             script = resPos.GetComponent<resurrection>();
             //            Debug.Log("bullet");

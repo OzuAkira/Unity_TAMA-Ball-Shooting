@@ -186,6 +186,7 @@ public class EnemyCreate : MonoBehaviour
                 {
                     flag15 = true;
                     mask.SetActive(true);
+                    baria.SetActive(true);
                     _informertion = wall.GetComponent<informertion>();
                     _text[1].text = "Your Score " + _informertion.str;
                     newScoa = _informertion.scoa + _informertion._nokoriB * 1000 + _informertion._zan * 3000;
@@ -196,6 +197,7 @@ public class EnemyCreate : MonoBehaviour
         //Debug.Log(b.activeSelf);
 
     }
+    public GameObject baria;
     public AudioClip[] audios;
     private AudioSource _source;
     IEnumerator kuria()
