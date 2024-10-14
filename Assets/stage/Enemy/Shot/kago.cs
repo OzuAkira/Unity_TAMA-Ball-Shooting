@@ -47,6 +47,7 @@ public class kago : MonoBehaviour
         {
             playerObj = GameObject.Find("Player");
             X = false;
+            if(playerObj == null)return;
             target = playerObj.transform.position;
         }
         if(timer >= firsttime && count%3 == 0 )

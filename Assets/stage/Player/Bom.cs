@@ -11,7 +11,7 @@ public class Bom : MonoBehaviour
     private resurrection _resurrection;
     //public GameObject[] E_buret;
     public GameObject _BObj;
-    
+    //public GameObject
     void Start()
     {
         GameObject Res = GameObject.Find("Player_Resurrection");
@@ -30,14 +30,16 @@ public class Bom : MonoBehaviour
     {
         _resurrection.bulia.SetActive(true);
         _BObj.SetActive(true);
-        ///Debug.Log("ƒJƒEƒ“ƒg‘O");
+        ///Debug.Log("ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½O");
         yield return new WaitForSeconds(4f);
-        ///Debug.Log("4•bŒã");
+        ///Debug.Log("4ï¿½bï¿½ï¿½");
         _resurrection.bulia.SetActive(false);
         _BObj.SetActive(false);
     }
+
     void Update()
     {
+
         if(_resurrection.dieFlag)
         {
             nokoriBOM = 2;
@@ -49,5 +51,12 @@ public class Bom : MonoBehaviour
             GameObject _bullet = E_buret[i];
             if(_bullet.CompareTag("Enemy_bullet"))Destroy(_bullet);
         }*/
+    }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("Bom"))
+        {
+            nokoriBOM++;
+        }
     }
 }

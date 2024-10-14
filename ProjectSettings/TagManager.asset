@@ -11,6 +11,7 @@ TagManager:
   - bulia
   - Power
   - _gameOver
+  - Bom
   layers:
   - Default
   - TransparentFX
