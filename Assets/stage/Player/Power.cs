@@ -7,10 +7,12 @@ public class Power : MonoBehaviour
     public GameObject wall;
     informertion _info;
     public int P = 0;
+    public AudioClip[] audios;
+    private AudioSource _source;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _source = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -19,10 +21,14 @@ public class Power : MonoBehaviour
         {
             if(P < 2)
             {
+                _source.clip = audios[0];
+                _source.Play();
                 P++;
             }
             else
             {
+                _source.clip = audios[1];
+                _source.Play();
                 _info = wall.GetComponent<informertion>();
                 _info.scoa += 500;
             }

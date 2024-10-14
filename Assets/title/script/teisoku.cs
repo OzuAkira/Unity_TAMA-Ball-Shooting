@@ -9,6 +9,7 @@ public class teisoku : carsol
     public override void Select()
     {
         imo = gameObject.GetComponent<imo>();
+        GetComponent<AudioSource>().Play();
         imo.StartRebinding();
 
         //Debug.Log("teisoku="OnSprite);

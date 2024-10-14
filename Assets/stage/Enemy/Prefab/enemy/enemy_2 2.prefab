@@ -10,16 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 5122409158682632468}
   - component: {fileID: 5247224388149791187}
+  - component: {fileID: 176578692519850559}
   - component: {fileID: 852150999711171215}
   - component: {fileID: 3591090944802424435}
   - component: {fileID: 1151828291462042685}
-  - component: {fileID: -721908842284173871}
-  - component: {fileID: 4508478300960714479}
-  - component: {fileID: 5588272968199890911}
-  - component: {fileID: -3827564309239397196}
-  - component: {fileID: 6131240340346589952}
+  - component: {fileID: -2665415856211388199}
+  - component: {fileID: 958435241977202270}
+  - component: {fileID: 6756603173527062488}
+  - component: {fileID: 4967766621463983391}
   m_Layer: 0
-  m_Name: enemy_1 1
+  m_Name: enemy_2 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b97ac59ef148eae44b3bbab9eb7ed256, type: 3}
-  m_Color: {r: 0.6331261, g: 0.91194963, b: 0.6050986, a: 1}
+  m_Color: {r: 0.7817496, g: 0.91823894, b: 0.7709741, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,6 +92,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &176578692519850559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665511204343620730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a90e26a303ead54b8d6b4a3a411faec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy_HP: 1
+  die: 0
+  audios:
+  - {fileID: 8300000, guid: 62611d36f086ca1448f6800aafe16585, type: 3}
+  - {fileID: 8300000, guid: 62611d36f086ca1448f6800aafe16585, type: 3}
 --- !u!50 &852150999711171215
 Rigidbody2D:
   serializedVersion: 4
@@ -145,7 +162,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aim_E_bullet: {fileID: 35243528381849259, guid: 0278d77f8b9b5f044806be7f2083fef2, type: 3}
---- !u!58 &-721908842284173871
+--- !u!114 &-2665415856211388199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665511204343620730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5576a8f56bfc23c4cbd2231e19454d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &958435241977202270
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,34 +208,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6399999
---- !u!114 &4508478300960714479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665511204343620730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a90e26a303ead54b8d6b4a3a411faec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy_HP: 1
-  die: 0
---- !u!114 &5588272968199890911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665511204343620730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d4d14f11e0b104aad9b123dd98a001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-3827564309239397196
+  m_Radius: 0.64
+--- !u!114 &6756603173527062488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aim_E_bullet: {fileID: 35243528381849259, guid: 0278d77f8b9b5f044806be7f2083fef2, type: 3}
---- !u!82 &6131240340346589952
+--- !u!82 &4967766621463983391
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

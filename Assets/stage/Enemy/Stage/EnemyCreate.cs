@@ -68,8 +68,9 @@ public class EnemyCreate : MonoBehaviour
         sr = mask.GetComponent<SpriteRenderer>();
         sr.color = new Color(0,0,0,0);
         mask.SetActive(false);
-       // Clear.SetActive(false);
-       
+        _source = GetComponent<AudioSource>();
+        // Clear.SetActive(false);
+
 
         for (int i = 0; i < _text.Count(); i++)
         {
@@ -195,15 +196,25 @@ public class EnemyCreate : MonoBehaviour
         //Debug.Log(b.activeSelf);
 
     }
+    public AudioClip[] audios;
+    private AudioSource _source;
     IEnumerator kuria()
     {
+        
         while (x < 1)
         {
             x += 0.01f;
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, x);
             yield return null;
         }
+
         x = 0;
+
+        yield return new WaitForSeconds(2);
+
+        _source.clip = audios[2];
+        _source.Play();
+
         while (x < 1)
         {
             _text[0].color = new Color(255, 255, 255, x);
@@ -213,6 +224,9 @@ public class EnemyCreate : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        _source.clip = audios[0];
+        _source.Play();
+
         while (x < 2)
         {
             x += 0.01f;
@@ -221,6 +235,9 @@ public class EnemyCreate : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+
+        _source.clip = audios[0];
+        _source.Play();
 
         while (x < 3)
         {
@@ -232,6 +249,9 @@ public class EnemyCreate : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        _source.clip = audios[1];
+        _source.Play();
+
         while (x < 5)
         {
             x += 0.01f;
@@ -240,6 +260,9 @@ public class EnemyCreate : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+
+        _source.clip = audios[0];
+        _source.Play();
 
         while (x < 7)
         {

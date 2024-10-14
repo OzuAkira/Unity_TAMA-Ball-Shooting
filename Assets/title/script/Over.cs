@@ -39,6 +39,7 @@ public class Over : MonoBehaviour
         {
             //Debug.Log("push");
             flag1 = true;
+            GetComponent<AudioSource>().Play();
             StartCoroutine(waitOne());
         }
 
@@ -60,6 +61,7 @@ public class Over : MonoBehaviour
         _in = Wall.GetComponent<informertion>();
         _Text1.text = "Your Score " + _in.str;
         float ii = 0;
+        GetComponent<AudioSource>().Play();
         while (ii <= 1) 
         {
 //            Debug.Log("ii="+ii);
@@ -74,7 +76,8 @@ public class Over : MonoBehaviour
             
             _Text2.text = "Thank you for playing!";
             _Text2.rectTransform.anchoredPosition = new Vector3(0, -2, 0);
-            while (iii <= 1)
+            GetComponent<AudioSource>().Play();
+        while (iii <= 1)
             {
                 _Text2.color = new Color(255, 255, 255, iii);
                 yield return null;

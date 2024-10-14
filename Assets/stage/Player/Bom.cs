@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class Bom : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class Bom : MonoBehaviour
     private resurrection _resurrection;
     //public GameObject[] E_buret;
     public GameObject _BObj;
+    public AudioClip audios;
+    private AudioSource _source;
     //public GameObject
     void Start()
     {
         GameObject Res = GameObject.Find("Player_Resurrection");
         _resurrection = Res.GetComponent<resurrection>();
+        _source = GetComponent<AudioSource>();
     }
     void OnBom()
     {
@@ -56,6 +60,8 @@ public class Bom : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bom"))
         {
+            _source.clip = audios;
+            _source.Play();
             nokoriBOM++;
         }
     }

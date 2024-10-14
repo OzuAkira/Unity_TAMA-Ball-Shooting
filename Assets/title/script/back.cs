@@ -11,6 +11,10 @@ public class back : carsol
     }
     IEnumerator Load_C_Scene()
     {
+        GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds(0.2f);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("title");
 
         // ロードがまだなら次のフレームへ

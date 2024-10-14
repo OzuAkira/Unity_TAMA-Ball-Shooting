@@ -17,7 +17,8 @@ public class shotMode : carsol
     public override void Select()
     {
         rebindUI = gameObject.GetComponent<imo>();
-      //  ipm.SetActive(false);
+        //  ipm.SetActive(false);
+        GetComponent<AudioSource>().Play();
         rebindUI.StartRebinding();
     }
 }

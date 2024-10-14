@@ -10,6 +10,8 @@ public class carsolcontroale : MonoBehaviour
     int Cursor = 0;
     public carsol[] MenuTable;
     public SpriteRenderer CursorRenderer;
+   // public AudioClip[] audios;
+    private AudioSource _source;
    // public InputActionReference _input;
     //private InputAction _action;
     
@@ -20,7 +22,8 @@ public class carsolcontroale : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      //  _action = _input.action;
+        //  _action = _input.action;
+        _source = GetComponent<AudioSource>();
         UpdateMenu();
         
     }
@@ -54,11 +57,15 @@ public class carsolcontroale : MonoBehaviour
         if (i )
         {
             Cursor--;
+           // _source.clip = audios[0];
+            _source.Play();
             i = false;
         }
         else if (ii)
         {
             Cursor++;
+            //_source.clip = audios[0];
+            _source.Play();
             ii = false;
         }
        /* var gamepad = Gamepad.current;
