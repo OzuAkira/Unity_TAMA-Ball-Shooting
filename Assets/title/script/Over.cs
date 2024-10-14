@@ -62,7 +62,7 @@ public class Over : MonoBehaviour
         float ii = 0;
         while (ii <= 1) 
         {
-            Debug.Log("ii="+ii);
+//            Debug.Log("ii="+ii);
             _Text1.color = new Color(255,255,255,ii);
             yield return null;
             ii+= 0.005f;
@@ -106,7 +106,7 @@ public class Over : MonoBehaviour
         //StopCoroutine(waitOne());
         
 
-        // ƒ[ƒh‚ª‚Ü‚¾‚È‚çŽŸ‚ÌƒtƒŒ[ƒ€‚Ö
+        // ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½È‚çŽŸï¿½Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
        
     }*/
     private void OnTriggerEnter2D(Collider2D other)
