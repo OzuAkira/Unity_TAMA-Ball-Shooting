@@ -59,6 +59,8 @@ public class EnemyCreate : MonoBehaviour
     public TMP_Text[] _text;
     private int newScoa;
     private float x = 0;
+    public GameObject player;
+    CircleCollider2D cc;
     //public GameObject 
 
     // Start is called before the first frame update
@@ -185,6 +187,8 @@ public class EnemyCreate : MonoBehaviour
                 if (b.activeSelf == false && flag15 == false)
                 {
                     flag15 = true;
+                    cc = player.GetComponent<CircleCollider2D>();
+                    cc.enabled = false;
                     mask.SetActive(true);
                     baria.SetActive(true);
                     _informertion = wall.GetComponent<informertion>();

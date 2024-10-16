@@ -111,4 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124be1ade36ad2743903ec5432fb0087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 25
   bulletObj: {fileID: 3639788968654015194, guid: 491c062670c582649b5dffe593c30d94, type: 3}

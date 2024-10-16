@@ -30,7 +30,7 @@ public class fiveway : MonoBehaviour
             if(playerObj == null){playerObj = GameObject.Find("Player");}
             else
             count++;
-            X = 60;
+            X = 45;
             var pos = gameObject.transform.position;
             var bullet = Instantiate(bulletObj);
             bullet.transform.position = pos;
