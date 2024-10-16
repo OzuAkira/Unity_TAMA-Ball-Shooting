@@ -17,7 +17,7 @@ public class leftMove : MonoBehaviour
     {
         timer++;
         gameObject.transform.position += Vector3.left * 0.03f; 
-        if (timer > 300){
+        if (timer > 600){
             gameObject.SetActive(false);
         }
     }

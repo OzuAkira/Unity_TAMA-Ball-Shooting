@@ -12,7 +12,7 @@ public class E_Shot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Wall")){
-            Destroy(gameObject,5.0f);
+            Destroy(gameObject,10.0f);
         }
     }
     // Update is called once per frame

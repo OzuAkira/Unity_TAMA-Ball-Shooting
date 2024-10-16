@@ -46,6 +46,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: New Layer -2
+    uniqueID: 1891608635
+    locked: 0
+  - name: New Layer -1
+    uniqueID: 3533417657
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -60,4 +66,7 @@ TagManager:
     locked: 0
   - name: New Layer 4
     uniqueID: 2635043707
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 590699633
     locked: 0

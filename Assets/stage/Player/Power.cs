@@ -21,12 +21,14 @@ public class Power : MonoBehaviour
         {
             if(P < 2)
             {
+                _source = GetComponent<AudioSource>();
                 _source.clip = audios[0];
                 _source.Play();
                 P++;
             }
             else
             {
+                _source = GetComponent<AudioSource>();
                 _source.clip = audios[1];
                 _source.Play();
                 _info = wall.GetComponent<informertion>();
@@ -36,8 +38,5 @@ public class Power : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //
 }

@@ -25,13 +25,6 @@ public class Over : MonoBehaviour
     {
         _Text2.color = new Color(255,255,255,0);
     }
-    void Start()
-    {
-        //_Text2.color = new Color(255,255,255,0);
-        //_action = _ref.action;
-       //sr = _Text1.GetComponent<SpriteRenderer>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -114,7 +107,7 @@ public class Over : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("_gameOver"))
+        if (!other.gameObject.CompareTag("_gameOver") /*&& !other.gameObject.CompareTag("Wall")*/)
         {
             other.gameObject.SetActive(false);
             game.SetActive(false);
