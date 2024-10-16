@@ -1400,14 +1400,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 590699633
@@ -1680,7 +1680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: -4.5}
+  m_AnchoredPosition: {x: -11, y: -4}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891524955
@@ -1948,7 +1948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.6, y: 0}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118517611
@@ -2410,14 +2410,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 259948989
@@ -2515,17 +2515,17 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 259948989
+  m_SortingLayerID: -1195319873
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1304416169
@@ -2720,7 +2720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: -0.6, y: 2}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380186199
@@ -3021,7 +3021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5de0d01f8969954e80062837d6bf224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
+  boss: {fileID: 7221296709542792351, guid: 37aed04c05a4934469d4543b7fbb063a, type: 3}
   zan: 2
 --- !u!114 &1481997485
 MonoBehaviour:
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   - {fileID: 401499359}
   - {fileID: 1040415271}
   - {fileID: 582140295}
-  player: {fileID: 0}
+  player: {fileID: 1481997478}
   baria: {fileID: 216418390}
   audios:
   - {fileID: 8300000, guid: a94205e213c17d24bb23f4afea92c899, type: 3}
@@ -3612,7 +3612,7 @@ MonoBehaviour:
   _backG: {fileID: 1952077739}
   _Text1: {fileID: 2011281641}
   dieFlag: 0
-  Z: {fileID: 0}
+  Z: {fileID: 1481997484}
 --- !u!4 &1711842501
 Transform:
   m_ObjectHideFlags: 0
@@ -3724,6 +3724,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1747968236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747968238}
+  - component: {fileID: 1747968237}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1747968237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747968236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ea1bc5a8deb7d42930019bf12a8deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1747968238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747968236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.8808174, y: -1.5897603, z: -0.04893125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763810913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,7 +4286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.8447, y: 3.9711}
+  m_AnchoredPosition: {x: 5.3, y: 3.9711}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011281641
@@ -4376,7 +4420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.5}
+  m_AnchoredPosition: {x: -0.3, y: -2.5}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014401751
@@ -4399,7 +4443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAMA ball Shooting
+  m_text: "TAMA ball \n      Shooting"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4568,22 +4612,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1481997481}
     m_Modifications:
-    - target: {fileID: 4320103671143835439, guid: 010450d137e51484ea0e9ddcdd44b4c7, type: 3}
-      propertyPath: m_Color.a
-      value: 0.69803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320103671143835439, guid: 010450d137e51484ea0e9ddcdd44b4c7, type: 3}
-      propertyPath: m_Color.b
-      value: 0.74291366
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320103671143835439, guid: 010450d137e51484ea0e9ddcdd44b4c7, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320103671143835439, guid: 010450d137e51484ea0e9ddcdd44b4c7, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7327044
-      objectReference: {fileID: 0}
     - target: {fileID: 6168004108795851995, guid: 010450d137e51484ea0e9ddcdd44b4c7, type: 3}
       propertyPath: m_Name
       value: player_bulia
@@ -4655,3 +4683,4 @@ SceneRoots:
   - {fileID: 307661193}
   - {fileID: 1794343314}
   - {fileID: 725597237}
+  - {fileID: 1747968238}

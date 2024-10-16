@@ -17,11 +17,11 @@ public class Power : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Power"))
+        if(other.gameObject.CompareTag("Power") && gameObject.activeSelf == true)
         {
             if(P < 2)
             {
-                _source = GetComponent<AudioSource>();
+                _source = gameObject.GetComponent<AudioSource>();
                 _source.clip = audios[0];
                 _source.Play();
                 P++;
