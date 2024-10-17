@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class deliteBullet : MonoBehaviour
 {
+    private int frame = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,6 +15,15 @@ public class deliteBullet : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy_bullet"))
         {
             Destroy(other.gameObject);
+        }
+    }
+    private void Update()
+    {
+        frame++;
+        if(frame > 240)
+        {
+            gameObject.SetActive(false);
+            frame = 0;
         }
     }
 }
