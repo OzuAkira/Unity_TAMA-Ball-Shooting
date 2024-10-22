@@ -14,6 +14,7 @@ public class Bom : MonoBehaviour
     public GameObject _BObj;
     public AudioClip audios;
     private AudioSource _source;
+    private bool f;
     //public GameObject
     void Start()
     {
@@ -44,8 +45,9 @@ public class Bom : MonoBehaviour
     void Update()
     {
 
-        if(_resurrection.dieFlag)
+        if(_resurrection.dieFlag && f == false)
         {
+            f = true;
             nokoriBOM = 2;
         }
         string Bom = nokoriBOM.ToString();
