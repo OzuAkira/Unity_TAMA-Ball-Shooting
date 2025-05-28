@@ -16,7 +16,7 @@ public class Down : MonoBehaviour
         {
             Debug.Log(gameObject.transform.position);
             f = true;
-            Instantiate(game,new Vector3(0,40,0),Quaternion.identity);
+            Instantiate(game,new Vector3(0,41,0),Quaternion.identity);
             Destroy(gameObject,6000);
         }
         gameObject.transform.position -= new Vector3(0,0.01f,0);
